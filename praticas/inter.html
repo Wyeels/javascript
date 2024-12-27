@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interação</title>
+    <style>
+        div {
+            width: 30px;
+            height: 30px;
+            padding: 20px;
+            background-color: aqua;
+        }
+    </style>
 </head>
 <body>
     <main>
@@ -16,13 +24,18 @@
                     <input type="number" name="numb" id="inum2">
                 </div>
                 <div id="iresult">
-                    
+                    <input type="button" value="enviar" onclick="mostrarSoma()">
                 </div>
             </form>
         </section>
     </main>
     <script>
-        window.alert('pau')
+        function mostrarSoma() {
+            var n1 = Number(document.getElementById('inum1').value)
+            var n2 = Number(document.getElementById('inum2').value)
+            var result = n1 + n2
+            window.alert(result)
+        }
     </script>
 </body>
 </html>
