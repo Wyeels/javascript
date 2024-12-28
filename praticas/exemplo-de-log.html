@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <h1>Criação</h1>
+        </section>
+        <section>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, id accusantium cum praesentium architecto officia possimus expedita sed consequatur voluptate temporibus numquam quibusdam fugit rerum maiores quisquam sequi ratione reprehenderit!</p>
+            <form action="cadas.php" method="post">
+                <div>
+                    <label for="iusu"></label>
+                    <input type="email" name="usu" id="iusu">
+                </div>
+                <div>
+                    <label for="isen"></label>
+                    <input type="password" name="sen" id="isen">
+                </div>
+                <div>
+                    <input type="submit" value="Aceitar" onclick="logarConta()">
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        function logarConta() {
+            var usu = document.getElementById('iusu').value
+            var sen = document.getElementById('isen')
+            document.write(`Olá, Sr. ${usu}, bem vindo!`)
+        }
+    </script>
+</body>
+</html>
