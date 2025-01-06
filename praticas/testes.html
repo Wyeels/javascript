@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expressões</title>
+</head>
+<body>
+    <form action="#" method="post">
+        <div>
+            <input type="text" name="nome" id="inome">
+        </div>
+        <div>
+            <input type="number" name="idade" id="iidade">
+        </div>
+        <div>
+            <input type="submit" value="Enviar">
+        </div>
+    </form>
+
+    <script>
+        var nome = document.getElementById('inome')
+        var idade = document.getElementById('iidade')
+
+        if (idade >= 18) {alert('Bem vindo!')} else {alert('Você deve ter no mínimo 18 anos')}
+    </script>
+</body>
+</html>
