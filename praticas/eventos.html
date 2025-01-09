@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <style>
+        * {
+            text-decoration: none;
+            color: black;
+            box-sizing: border-box;
+            font: normal 15pt Arial;
+        }
+
+        nav {
+            display: none;
+        }
+
+        a {
+            display: block;
+            padding: 10px;
+        }
+
+        p {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <p>Abrir menu</p>
+    <menu>
+        <nav>
+            <a href="#">A</a>
+            <a href="#">B</a>
+            <a href="#">C</a>
+            <a href="#">D</a>
+            <a href="#">E</a>
+            <a href="#">F</a>
+        </nav>
+    </menu>
+
+    <script>
+        var itens = window.document.querySelector('nav')
+        var menu = document.getElementsByTagName('p')[0]
+        menu.addEventListener('mouseenter', entrar)
+        menu.addEventListener('mouseout', sair)
+        menu.addEventListener('click', clicou)
+
+        function entrar() {
+            menu.style.color = 'green'
+        }
+
+        function sair() {
+            menu.style.color = 'black'
+        }
+
+        function clicou() {
+            itens.style.display = 'block'
+        }
+    </script>
+</body>
+</html>
