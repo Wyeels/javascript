@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <form action="#" method="post">
+        <div>
+            <label for="iusu">Usuário</label>
+            <input type="text" name="usu" id="iusu">
+        </div>
+        <div>
+            <label for="iemail">Email</label>
+            <input type="email" name="email" id="iemail">
+        </div>
+        <div>
+            <label for="isen">Senha</label>
+            <input type="password" name="sen" id="isen">
+        </div>
+        <div>
+            <input type="button" value="Continuar">
+        </div>
+    </form>
+
+    <script>
+        var nome = document.getElementById('iusu')
+        var email = document.getElementById('iemail')
+        var senha = window.document.getElementById('isen')
+        var continuar = window.document.querySelector('input[type = button]')
+        continuar.addEventListener('click', clicou)
+
+        function clicou() {
+            var tam = nome.value
+            var mail = email.value
+            var sen = senha.value
+            /*if (tam.length < 5) {
+                window.alert('Seu nome deve ter o mínimo de 5 caracteres!')
+            }
+            
+            if (!mail.includes('@') && !mail.includes('.')) {
+                window.alert('Você precisa usar um e-mail válido!')
+            }*/
+
+            if (sen.length < 8) {
+                window.alert('Sua senha deve ter no mínimo 8 caracteres!')
+            }
+        }
+
+    </script>
+</body>
+</html>
