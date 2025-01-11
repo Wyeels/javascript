@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Eventos</title>
+    <style>
+        body {
+            transform: scale();
+        }
+    </style>
+</head>
+<body>
+    <h1>Eventos em js</h1>
+    <form action="#">
+        <input type="button" value="Entrar">
+    </form>
+    <div>
+        Mostrar
+    </div>
+    <script>
+        var botao = document.querySelector('input[type = button]')
+        var div = window.document.querySelector('div')
+
+        div.style.opacity = '0'
+        div.style.padding = '20px'
+        div.style.margin = '20px'
+        div.style.backgroundColor = 'gray'
+        div.style.borderRadius = '8px'
+        div.style.textAlign = 'center'
+        div.style.color = 'white'
+        div.style.boxShadow = '3px 3px 2px #00000020'
+
+        botao.style.borderRadius = '8px'
+        botao.style.border = 'none'
+        botao.style.padding = '10px'
+        botao.style.margin = '20px'
+        botao.style.boxShadow = '3px 3px 2px #00000020'
+
+        botao.addEventListener('mouseenter', entrou)
+        botao.addEventListener('mouseout', saiu)
+        botao.addEventListener('click', clicou)
+
+        div.addEventListener('click', expa)
+
+        function entrou() {
+            botao.style.transform = 'scale(1.5)'
+            botao.style.transition = 'transform 1s ease'
+        }
+
+        function saiu() {
+            botao.style.transform = 'scale(1)'
+        }
+
+        function clicou() {
+            botao.style.position = 'relative'
+            if (botao.style.left == '300px') {
+                botao.style.left = '0px'
+                div.style.opacity = '0'
+            } else {
+                botao.style.left = '300px'
+                div.style.opacity = '100'
+            }
+            botao.style.transition = 'left 1s ease, background-color 1s ease'
+            div.style.transition = 'opacity 1s ease'
+        }
+
+        function expa() {
+            div.style.cursor = 'pointer'
+            div.style.transform = 'scale(50)'
+            div.style.transition = 'transform 3s ease'
+            div.innerText = ''
+        }
+
+        document.body.style.overflow = 'hidden'
+    </script>
+</body>
+</html>
