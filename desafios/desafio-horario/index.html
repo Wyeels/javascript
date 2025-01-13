@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horário</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        h1, footer p {
+            color: white;
+        } 
+
+        section {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hora do Dia</h1>
+    </header>
+    <main>
+        <section>
+            <p></p>
+            <article>
+                <!-- imagem -->
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>&#xA9 CursoemVídeo</p>
+    </footer>
+
+    <script>
+        var hora = new Date()
+        var mhora = document.querySelector('p')
+        mhora = hora.getHours()
+        mhora.style.backgroundColor = 'red'
+        mhora.style.width = '50px'
+        mhora.style.height = '50px'
+    </script>
+</body>
+</html>
