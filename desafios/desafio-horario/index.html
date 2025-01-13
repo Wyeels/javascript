@@ -44,8 +44,14 @@
         article {
             width: 250px;
             height: 250px;
-            margin: 30px;
+            margin: 50px;
             border-radius: 50%;
+        }
+
+        @media screen and (max-width: 768px) {
+            section {
+                width: 70vw;
+            }
         }
     </style>
 </head>
@@ -81,7 +87,7 @@
             img.style.background = 'transparent url(Amanhecer.jpg) center no-repeat scroll'
             img.style.backgroundSize = 'cover'
             vhora.innerText += ' da manhã!'
-        } else if (mhora < 17) {
+        } else if (mhora < 18) {
             document.body.style.backgroundColor = 'burlywood'
             img.style.background = 'transparent url(Entardecer.jpg) center no-repeat scroll'
             img.style.backgroundSize = 'cover'
