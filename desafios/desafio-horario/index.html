@@ -23,12 +23,29 @@
 
         h1, footer p {
             color: white;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
         } 
 
         section {
-            width: 100px;
-            height: 100px;
-            background-color: blue;
+            width: 50vw;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            flex: 1 1 500px;
+            background-image: linear-gradient(to right, rgba(224, 255, 255, 0.85), rgba(255, 255, 255, 0.85));
+            border-radius: 8px;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+            padding: 20px;
+        }
+
+        article {
+            width: 250px;
+            height: 250px;
+            margin: 30px;
+            border-radius: 50%;
         }
     </style>
 </head>
@@ -50,11 +67,31 @@
 
     <script>
         var hora = new Date()
-        var mhora = document.querySelector('p')
-        mhora = hora.getHours()
-        mhora.style.backgroundColor = 'red'
-        mhora.style.width = '50px'
-        mhora.style.height = '50px'
+        var mhora = hora.getHours()
+        var mmin = hora.getMinutes()
+        var vhora = document.querySelector('p')
+        var img = window.document.querySelector('main > section > article')
+
+        vhora.innerText = `Agora são ${mhora}:${mmin}`
+        vhora.style.fontWeight = 'bold'
+        vhora.style.height = '50px'
+
+        if (mhora < 12) {
+            document.body.style.backgroundColor = 'bisque'
+            img.style.background = 'transparent url(Amanhecer.jpg) center no-repeat scroll'
+            img.style.backgroundSize = 'cover'
+            vhora.innerText += ' da manhã!'
+        } else if (mhora < 17) {
+            document.body.style.backgroundColor = 'burlywood'
+            img.style.background = 'transparent url(Entardecer.jpg) center no-repeat scroll'
+            img.style.backgroundSize = 'cover'
+            vhora.innerText += ' da tarde!'
+        } else {
+            document.body.style.backgroundColor = 'lightslategray'
+            img.style.background = 'transparent url(Anoitecer.jpg) center no-repeat scroll'
+            img.style.backgroundSize = 'cover'
+            vhora.innerText += ' da noite!'
+        }
     </script>
 </body>
 </html>
