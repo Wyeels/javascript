@@ -77,13 +77,13 @@
                 <form action="#" method="get">
                     <div>
                         <label for="iidade">Ano de Nascimento:</label>
-                        <input type="number" name="idade" id="iidade">
+                        <input type="number" name="idade" id="iidade" required>
                     </div>
                     <div>
                         <span>Sexo:</span>
-                        <input type="radio" name="genero" id="imasculino" value="M">
+                        <input type="radio" name="genero" id="imasculino" value="M" required>
                         <label for="imasculino">Masculino</label>
-                        <input type="radio" name="genero" id="ifeminino" value="F">
+                        <input type="radio" name="genero" id="ifeminino" value="F" required>
                         <label for="ifeminino">Feminino</label>
                     </div>
                     <div>
@@ -92,6 +92,9 @@
                 </form>
             </article>
             <div>
+                <p>
+                    <!-- texto -->
+                </p>
                 <!-- imagem de fundo -->
             </div>
         </section>
@@ -101,7 +104,23 @@
     </footer>
 
     <script>
+        var ano = new Date()
+        var idade = ano.getFullYear()
+        var nasc = document.getElementById('iidade')
+        var botao = document.querySelector('article > form > div > input[type = submit]')
 
+        botao.addEventListener('click', clicou)
+
+        function clicou() {
+            var calc = idade - nasc.value
+            var gen = document.querySelectorAll('input[type = radio]').innerText
+            
+            if (gen == 'M') {
+                document.body.style.backgroundColor = 'red'
+            } else {
+                document.style.backgroundColor = 'green'
+            }
+        }
     </script>
 </body>
 </html>
