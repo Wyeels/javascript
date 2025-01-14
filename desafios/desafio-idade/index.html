@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: #3C82D4;
+        }
+
+        h1, footer p {
+            color: white;
+        }
+
+        section {
+            width: 500px;
+            flex: 1 1 500px;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 12px;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+            background-color: white;
+        }
+
+        article {
+            margin: 10px;
+        }
+
+        article > form > div {
+            padding: 10px;
+            font-size: 18pt;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Verificador de Idade</h1>
+    </header>
+    <main>
+        <section>
+            <article>
+                <form action="#" method="get">
+                    <div>
+                        <label for="iidade">Ano de Nascimento:</label>
+                        <input type="number" name="idade" id="iidade">
+                    </div>
+                    <div>
+                        <span>Sexo:</span>
+                        <input type="radio" name="genero" id="imasculino" value="M">
+                        <label for="imasculino">Masculino</label>
+                        <input type="radio" name="genero" id="ifeminino" value="F">
+                        <label for="ifeminino">Feminino</label>
+                    </div>
+                    <div>
+                        <input type="submit" value="Verificar">
+                    </div>
+                </form>
+            </article>
+            <div>
+                <!-- imagem de fundo -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&#xA9 CursoemVídeo</p>
+    </footer>
+
+    <script>
+
+    </script>
+</body>
+</html>
