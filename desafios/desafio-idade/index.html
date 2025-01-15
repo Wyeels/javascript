@@ -47,7 +47,7 @@
             font-size: 18pt;
         }
 
-        article > form > div > input[type = submit] {
+        article > form > div > input[type = button] {
             display: block;
             padding: 8px;
             margin: auto;
@@ -58,7 +58,7 @@
             box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
         }
 
-        article > form > div > input[type = submit]:hover {
+        article > form > div > input[type = button]:hover {
             background-color: rgba(128, 128, 128, 0.7);
             color: white;
             box-shadow: 0px 0px 3px rgba(255, 255, 255, 0.4);
@@ -87,7 +87,7 @@
                         <label for="ifeminino">Feminino</label>
                     </div>
                     <div>
-                        <input type="submit" value="Verificar">
+                        <input type="button" value="Verificar">
                     </div>
                 </form>
             </article>
@@ -107,18 +107,19 @@
         var ano = new Date()
         var idade = ano.getFullYear()
         var nasc = document.getElementById('iidade')
-        var botao = document.querySelector('article > form > div > input[type = submit]')
+        var botao = document.querySelector('article > form > div > input[type = button]')
 
         botao.addEventListener('click', clicou)
 
         function clicou() {
             var calc = idade - nasc.value
-            var gen = document.querySelectorAll('input[type = radio]').innerText
+            var gen = document.querySelector('input[type = radio]:checked')
+            var gene = gen.value
             
-            if (gen == 'M') {
+            if (gene == 'M') {
                 document.body.style.backgroundColor = 'red'
             } else {
-                document.style.backgroundColor = 'green'
+                document.body.style.backgroundColor = 'green'
             }
         }
     </script>
