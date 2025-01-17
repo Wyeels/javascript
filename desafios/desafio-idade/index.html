@@ -22,7 +22,7 @@
             background-color: #3C82D4;
         }
 
-        h1, footer p {
+        h1, footer p, a {
             color: white;
         }
 
@@ -98,16 +98,18 @@
                     </div>
                 </form>
             </article>
-            <div>
+            <article>
                 <p>
                     <!-- texto -->
                 </p>
+            </article>
+            <div id="iimg">
                 <!-- imagem de fundo -->
             </div>
         </section>
     </main>
     <footer>
-        <p>&#xA9 CursoemVídeo</p>
+        <p>&#xA9 <a href="https://www.cursoemvideo.com">CursoemVídeo</a> & <a href="https://pixabay.com">Pixabay</a></p>
     </footer>
 
     <script>
@@ -123,6 +125,15 @@
             var gen = document.querySelector('input[type = radio]:checked')
             var gene = gen.value
             var indicação = document.getElementsByTagName('p')[0]
+            var img = document.getElementById('iimg')
+
+            img.style.width = '300px'
+            img.style.height = '300px'
+            img.style.margin = '10px'
+            img.style.borderRadius = '50%'
+            img.style.background = 'transparent url() center no-repeat scroll'
+            img.style.backgroundSize = 'cover'
+
 
             if (nasc.value < 1920 || nasc.value > idade) {
                 alert('[ERRO] Por favor, digite uma data de nascimento válida!')
@@ -130,10 +141,29 @@
                 indicação.innerText = `Identificamos uma pessoa do gênero ${gene} com ${calc} anos de idade.`
             }
 
-            if (gene == 'masculino' && calc < 18) {
-                document.body.style.backgroundColor = 'red'
+            if (gene == 'masculino' && calc < 12) {
+                img.style.backgroundImage = 'url(images/criança-m.jpg)'
+            } else if (gene == 'masculino' && calc < 19) {
+                img.style.backgroundImage = 'url(images/adolescente-m.jpg)'
+            } else if (gene == 'masculino' && calc < 33) {
+                img.style.backgroundImage = 'url(images/adulto-m.jpg)'
+            } else if (gene == 'masculino' && calc < 53) {
+                img.style.backgroundImage = 'url(images/meia-idade-m.jpg)'
+            } else if (gene == 'masculino' && calc > 52) {
+                img.style.backgroundImage = 'url(images/senhor-m.jpg)'
             }
 
+            if (gene == 'feminino' && calc < 12) {
+                img.style.backgroundImage = 'url(images/criança-f.jpg)'
+            } else if (gene == 'feminino' && calc < 19) {
+                img.style.backgroundImage = 'url(images/adolescente-f.jpg)'
+            } else if (gene == 'feminino' && calc < 33) {
+                img.style.backgroundImage = 'url(images/adulta-f.jpg)'
+            } else if (gene == 'feminino' && calc < 53) {
+                img.style.backgroundImage = 'url(images/meia-idade-f.jpg)'
+            } else if (gene == 'feminino' && calc > 52) {
+                img.style.backgroundImage = 'url(images/senhora-f.jpg)'
+            }
         }
     </script>
 </body>
