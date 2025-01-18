@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Par ou Impar</title>
+</head>
+<body>
+    <input type="number" name="num" id="inum">
+    <input type="button" value="Calcular">
+
+    <script>
+        var calc = document.querySelector('input[type = button]')
+        calc.addEventListener('click', clicou)
+        var mostrar = document.createElement('p')
+        
+        function clicou() {
+        var num = window.document.getElementById('inum')
+        var numb = num.value
+        window.document.body.appendChild(mostrar)
+
+        if (numb % 2 == 0) {
+            mostrar.innerText = 'Seu número é par!'
+        } else {
+            mostrar.innerText = 'Seu número é impar!'
+        }
+        }
+    </script>
+</body>
+</html>
