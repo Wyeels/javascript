@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Primos</title>
+</head>
+<body>
+    <input type="number" name="num" id="inum">
+    <input type="button" value="Confirmar">
+
+    <script>
+        
+        var botao = document.querySelector('input[type = button]')
+        botao.addEventListener('click', clicou)
+        var elemento = document.createElement('div')
+        window.document.body.appendChild(elemento)
+
+        function clicou() {    
+            var valor = window.document.getElementById('inum')
+            var val = Number(valor.value)
+            var numd = 2
+
+            if (val <= 1) {
+                elemento.innerText = 'Isso não é um número primo!'
+            }
+
+            while (numd <= Math.sqrt(val)) {
+                if (val % numd === 0) {
+                elemento.innerText = 'Isso não é um número primo!'
+                return
+                }
+                numd++
+            }
+
+            elemento.innerText = 'Isso é um número primo!'
+        } 
+    </script>
+</body>
+</html>
