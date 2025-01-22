@@ -19,22 +19,23 @@ function clicou() {
         alert('Você precisa selecionar um valor em "Início"!')
     } else if (fim.value.length == 0) {
         alert('Você precisa selecionar um valor em "Fim"!')
-    } else if (passo.value == 0) {
-        alert('Passo inválido! Considerando PASSO 1')
-        passo++
     }
 
-    for(var valor = 1; valor <= fimvalor; valor += passovalor) {
-        //var soma = iniciovalor += passovalor
+    paragrafo.innerText = ''
+
+    for (var valor = 1; valor <= fimvalor; valor += passovalor) {
         //fimvalor1.innerText += `${valor}\uD83C\uDFF3\uFE0F`
-        paragrafo.innerText += `${valor} \uD83D\uDC49`
-
-        
+        paragrafo.innerText += `${valor}\uD83D\uDC49`
+           
+        if (passovalor == 0) {
+        alert('Passo inválido! Considerando PASSO 1')
+        passovalor++
+            }
     }
-    if (paragrafo.innerText > `${valor} \uD83D\uDC49`) {
-            paragrafo.innerText = ''
+        
+    if (paragrafo.length == valor.value) {
+            paragrafo.innerText += '\uD83C\uDFF3\uFE0F'
         }
-    
 /*
     var valor = 1
     while(valor <= fimvalor) {
@@ -45,8 +46,4 @@ function clicou() {
 */  
     mensagem.innerText = 'Calculado:'
     mensagem.appendChild(paragrafo)
-}
-
-if (paragrafo.value.length > 0) {
-    paragrafo.innerText = ''
 }
