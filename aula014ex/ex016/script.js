@@ -23,7 +23,7 @@ function clicou() {
 
     paragrafo.innerText = ''
 
-    for (var valor = 1; valor <= fimvalor; valor += passovalor) {
+    for (var valor = iniciovalor; valor <= fimvalor; valor += passovalor) {
         //fimvalor1.innerText += `${valor}\uD83C\uDFF3\uFE0F`
         paragrafo.innerText += `${valor}\uD83D\uDC49`
            
