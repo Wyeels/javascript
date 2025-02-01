@@ -38,8 +38,6 @@ function end() {
             var fim = 0 
             fim = fim += salvos[soma]
             
-            
-            textos.innerText = fim
         }
 
         textos.innerText = `
