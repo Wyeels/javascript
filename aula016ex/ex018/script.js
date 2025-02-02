@@ -1,6 +1,7 @@
 let botaoa = window.document.getElementById('iadd')
 let botaof = window.document.getElementById('iend')
 let salvos = []
+let textos = window.document.createElement('div')
 
 botaoa.addEventListener('click', start)
 
@@ -8,6 +9,8 @@ botaof.addEventListener('click', end)
 
 function start() {
 let numero = document.getElementById('inumero').value 
+
+textos.innerText = ''
 
 let valores = document.getElementById('ivalores')
 
@@ -28,18 +31,16 @@ if (numero < 1 || numero > 100 || numero.length < 1) {
 
 
 function end() {
-    let textos = window.document.createElement('div')
-
+    let par = document.querySelector('p#itext')  
     let soma = 0
 
-    document.body.appendChild(textos)
-
-    textos.innerText = ''
+    par.appendChild(textos)
+    
     if (salvos.length < 1) {
         alert('[ERRO] Por favor, garanta que você tenha adicionado pelo menos um número!')
     } else {
-        for (let contador = 0; contador < salvos.length; contador++) {
-            soma = soma += salvos[contador]
+        for (let contador = 0; contador < salvos.length; contador++) {    
+            soma = soma += Number(salvos[contador])
         }
 
         textos.innerText = `
@@ -49,7 +50,5 @@ function end() {
         A soma de todos esses valores é de ${soma}
         A média de todos os valores juntos é de ${soma / salvos.length}`
     } 
-    
-    
 }
 
