@@ -4,4 +4,4 @@ function contar(palavra) {
     console.log(tamanho.length)
 }
 
-contar('Arroz    ')
+contar('Arroz')
