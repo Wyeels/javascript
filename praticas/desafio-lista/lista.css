@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+main > section > h1 {
+    padding: 10px;
+    margin: 10px;
+}
+
+main > section > input {
+    width: min-content;
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    margin: 2px;
+    padding: 4px;
+}
+
+main > section > input:hover {
+    transform: scale(1.03);
+    transition: all .5s ease;
+}
