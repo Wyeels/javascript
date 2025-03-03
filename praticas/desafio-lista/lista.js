@@ -15,34 +15,32 @@ for (let contador in item) {
 function clicou() {
     const escolhido = this.value
     const botesc = this
-    let eli
+    const boteli = document.querySelectorAll('.elibot')
+    boteli.value = escolhido
+    const b = []
+    
+    
+    
 
     if (item[escolhido].style.textDecoration == 'line-through') {
         item[escolhido].style.textDecoration = 'none'
         botesc.innerText = 'Completo'
-  
+        if (boteli[escolhido].checkVisibility() == true) {
+        boteli[escolhido].remove()
+        }
     } else {
         const eliminar = document.createElement('button')
+        eliminar.setAttribute('class', 'elibot')    
         eliminar.innerText = 'Apagar'
         botesc.after(eliminar)
-        if (eliminar.innerText == 'Apagar') {
-            eli = eliminar.value
-        } else {
-            eli = eliminar.value
-        }
-
-        if (eli == undefined) {
-            eliminar.remove()
-        }
-
+        // b += b.push(boteli.value)
         item[escolhido].style.textDecoration = 'line-through'
         botesc.innerText = 'Incompleto'
     }
 
-    alert(eli)
-
     alert(escolhido)
-
+    alert(boteli)
+    alert(b)
     alert(itens)
     escolhido.style.background = 'red'
 }
