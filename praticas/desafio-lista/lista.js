@@ -14,22 +14,35 @@ for (let contador in item) {
 
 function clicou() {
     const escolhido = this.value
-    
-    // item[escolhido].style.textDecoration = 'line-through'
-    
+    const botesc = this
+    let eli
+
     if (item[escolhido].style.textDecoration == 'line-through') {
         item[escolhido].style.textDecoration = 'none'
-        item[escolhido].style.background = 'blue'
-        // const eliminar = document.createElement('button')
-        // eliminar.innerText = 'aaaaaaaaaaa'
-        // escolhido.appendChild(eliminar)
+        botesc.innerText = 'Completo'
+  
     } else {
+        const eliminar = document.createElement('button')
+        eliminar.innerText = 'Apagar'
+        botesc.after(eliminar)
+        if (eliminar.innerText == 'Apagar') {
+            eli = eliminar.value
+        } else {
+            eli = eliminar.value
+        }
+
+        if (eli == undefined) {
+            eliminar.remove()
+        }
+
         item[escolhido].style.textDecoration = 'line-through'
+        botesc.innerText = 'Incompleto'
     }
 
+    alert(eli)
+
     alert(escolhido)
-    
-    
+
     alert(itens)
     escolhido.style.background = 'red'
 }
