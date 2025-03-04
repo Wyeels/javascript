@@ -9,38 +9,46 @@ for (let contador in item) {
     botao.addEventListener('click', clicou)
     botao.insertAdjacentHTML('afterend', '<br></br>')
     botao.value = contador
-    itens.push(contador)
 }
 
 function clicou() {
     const escolhido = this.value
     const botesc = this
-    const boteli = document.querySelectorAll('.elibot')
-    boteli.value = escolhido
-    const b = []
-    
-    
-    
 
     if (item[escolhido].style.textDecoration == 'line-through') {
         item[escolhido].style.textDecoration = 'none'
         botesc.innerText = 'Completo'
-        if (boteli[escolhido].checkVisibility() == true) {
-        boteli[escolhido].remove()
+        itens[botesc].style.background = 'red'
+        
+
+        if (itens.indexOf()) {
+            itens.splice(botesc, 1)
         }
+
+        if (itens[escolhido].checkVisibility() == true) {
+            
+            itens[escolhido].remove()
+        }
+
+        
+
     } else {
         const eliminar = document.createElement('button')
-        eliminar.setAttribute('class', 'elibot')    
+        eliminar.setAttribute('class', 'boteli')    
         eliminar.innerText = 'Apagar'
+        eliminar.value = escolhido
         botesc.after(eliminar)
-        // b += b.push(boteli.value)
         item[escolhido].style.textDecoration = 'line-through'
         botesc.innerText = 'Incompleto'
+        itens.push(eliminar.value)
+
+        // itens.push(document.querySelectorAll('.boteli'))
+        
+        // itens.push(document.querySelectorAll('button.boteli').value)
     }
 
     alert(escolhido)
-    alert(boteli)
-    alert(b)
+    alert((botesc))
     alert(itens)
     escolhido.style.background = 'red'
 }
