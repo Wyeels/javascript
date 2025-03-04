@@ -1,6 +1,14 @@
 const item = document.getElementsByClassName('itens')
+const section = document.querySelector('section#guardaritem')
+section.style.height = 'min-content'
+const novoitem = document.createElement('button')
+novoitem.innerText = 'Criar'
+section.appendChild(novoitem)
+novoitem.addEventListener('click', criar)
+carregar()
 
-for (let contador in item) {
+function carregar() {
+    for (let contador in item) {
     const botao = document.createElement('button')
     botao.setAttribute('class', contador)
     item[contador].after(botao)
@@ -10,6 +18,8 @@ for (let contador in item) {
     botao.insertAdjacentHTML('afterend', '<br><br>')
     botao.value = contador
 }
+}
+
 
 
 function completo() {
@@ -20,11 +30,11 @@ function completo() {
         item[escolhido].style.textDecoration = 'none'
         botesc.innerText = 'Completo'
 
-        document.getElementById(escolhido).remove()
+        document.getElementsByName(escolhido)[0].remove()
 
     } else {
         const eliminar = document.createElement('button')
-        eliminar.setAttribute('id', escolhido)  
+        eliminar.setAttribute('name', escolhido)  
         eliminar.value = escolhido 
         eliminar.innerText = 'Apagar'
         botesc.after(eliminar)
@@ -33,16 +43,22 @@ function completo() {
 
         eliminar.addEventListener('click', apagar)
     }
-    alert(escolhido)
+    
 }
 
 function apagar() {
     const escolhido = this.value
     
     document.getElementsByClassName(escolhido)[0].remove()
-    document.getElementById(escolhido).remove()
-    item[escolhido].remove()
-
-    alert(escolhido)
+    document.getElementsByName(escolhido)[0].remove()
+    document.getElementsByClassName('itens')[0].remove()
 }
+
+function criar() {
+    const caixa = document.createElement('input')
+    caixa.setAttribute('class', 'itens2')
+    caixa.style.display = 'block'
+    novoitem.insertAdjacentElement('beforebegin', caixa)
+}
+
 
