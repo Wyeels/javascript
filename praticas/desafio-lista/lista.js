@@ -34,15 +34,11 @@ function atualizar() {
         botao.style.display = 'inline'
         botao.addEventListener('click', completo)
         botao.value = contador
-        if (document.getElementsByClassName(contador)[]) {
-            remove()
-        }
+
+        
         
     }
-    // if (document.getElementsByClassName('1')[1].checkVisibility() == true) {
-    //     // botao[contador].remove()
-    //     alert('a')
-    // }
+
 }
 
 
