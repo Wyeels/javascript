@@ -20,7 +20,7 @@ main > section > h1 {
     margin: 10px;
 }
 
-main > section > input {
+main > section > p > input {
     width: min-content;
     display: inline-block;
     border: 1px solid rgba(0, 0, 0, 0.3);
@@ -29,7 +29,7 @@ main > section > input {
     padding: 4px;
 }
 
-main > section > input:hover {
+main > section > p > input:hover {
     transform: scale(1.03);
     transition: all .5s ease;
 }
