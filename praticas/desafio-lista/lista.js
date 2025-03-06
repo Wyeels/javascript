@@ -15,11 +15,12 @@ function criar() {
     atualizar()
 }
 
-const item = document.getElementsByClassName('itens')
+
 
 atualizar()
 
 function atualizar() {
+    const item = document.getElementsByClassName('itens')
     const paragrafo = document.querySelectorAll('p')
 
     for (let contador in item) {
@@ -34,13 +35,17 @@ function atualizar() {
         botao.style.display = 'inline'
         botao.addEventListener('click', completo)
         botao.value = contador
+        if (document.getElementsByClassName(contador)[1]) {
+            document.getElementsByClassName(contador)[0].remove()
+        }
 
         
-        
+    
+        // if (item[contador].after == label) {
+        //     alert('aaa')
+        // }
     }
-
 }
-
 
 function completo() {
     const escolhido = this.value
@@ -51,7 +56,6 @@ function completo() {
     if (opcoes.style.textDecoration == 'line-through') {
         opcoes.style.textDecoration = 'none'
         botesc.innerText = 'Completo'
-        // document.getElementsByClassName(escolhido)[0].remove()
         document.getElementsByClassName(escolhido)[0].lastChild.remove()
 
     } else {
@@ -70,14 +74,10 @@ function completo() {
 
 function apagar() {
     const escolhido = this.value
+    const total = document.getElementsByClassName('itens').length
+    document.getElementsByClassName(total-1)[0].remove()
     document.getElementsByClassName(`a${escolhido}`)[0].remove()
+    atualizar()
 }
-
-// function criar() {
-//     const caixa = document.createElement('p')
-//     caixa.setAttribute('class', 'itens2')
-//     caixa.style.display = 'block'
-//     novoitem.insertAdjacentElement('beforebegin', caixa)
-// }
 
 
