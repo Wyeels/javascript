@@ -24,7 +24,7 @@ function atualizar() {
     const paragrafo = document.querySelectorAll('p')
 
     for (let contador in item) {
-        paragrafo[contador].setAttribute('class', `a${contador}`)
+        paragrafo[contador].setAttribute('class', `p${contador}`)
         const label = document.createElement('label')
         label.setAttribute('class', contador)
         const botao = document.createElement('button')
@@ -56,10 +56,13 @@ function completo() {
     if (opcoes.style.textDecoration == 'line-through') {
         opcoes.style.textDecoration = 'none'
         botesc.innerText = 'Completo'
-        document.getElementsByClassName(escolhido)[0].lastChild.remove()
-
+        // document.getElementsByClassName(escolhido)[0].lastChild.remove()
+        // document.getElementsByClassName(escolhido)[0].appendChild(document.getElementById(`b${escolhido}`))
+        document.getElementById(`b${escolhido}`).remove()
+        
     } else {
         const eliminar = document.createElement('button')
+        eliminar.setAttribute('id', `b${escolhido}`)
         eliminar.style.display = 'inline'  
         eliminar.value = escolhido 
         eliminar.innerText = 'Apagar'
@@ -69,14 +72,13 @@ function completo() {
 
         eliminar.addEventListener('click', apagar)
     }
-    
 }
 
 function apagar() {
     const escolhido = this.value
     const total = document.getElementsByClassName('itens').length
     document.getElementsByClassName(total-1)[0].remove()
-    document.getElementsByClassName(`a${escolhido}`)[0].remove()
+    document.getElementsByClassName(`p${escolhido}`)[0].remove()
     atualizar()
 }
 
