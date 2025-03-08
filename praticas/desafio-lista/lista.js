@@ -38,12 +38,6 @@ function atualizar() {
         if (document.getElementsByClassName(contador)[1]) {
             document.getElementsByClassName(contador)[0].remove()
         }
-
-        
-    
-        // if (item[contador].after == label) {
-        //     alert('aaa')
-        // }
     }
 }
 
@@ -51,13 +45,9 @@ function completo() {
     const escolhido = this.value
     const botesc = this
     const opcoes = document.getElementById(escolhido)
-    // botesc.setAttribute('class', escolhido)
-    const label = document.querySelectorAll('label')
     if (opcoes.style.textDecoration == 'line-through') {
         opcoes.style.textDecoration = 'none'
         botesc.innerText = 'Completo'
-        // document.getElementsByClassName(escolhido)[0].lastChild.remove()
-        // document.getElementsByClassName(escolhido)[0].appendChild(document.getElementById(`b${escolhido}`))
         document.getElementById(`b${escolhido}`).remove()
         
     } else {
@@ -76,9 +66,8 @@ function completo() {
 
 function apagar() {
     const escolhido = this.value
-    const total = document.getElementsByClassName('itens').length
-    document.getElementsByClassName(total-1)[0].remove()
-    document.getElementsByClassName(`p${escolhido}`)[0].remove()
+    
+    document.getElementsByClassName(`p${escolhido}`)[0].style.display = 'none'
     atualizar()
 }
 
