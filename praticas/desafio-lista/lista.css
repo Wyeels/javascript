@@ -33,3 +33,10 @@ main > section > p > input:hover {
     transform: scale(1.03);
     transition: all .5s ease;
 }
+
+footer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
