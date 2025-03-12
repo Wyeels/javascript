@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <p></p>
+    </main>
+    <script>
+        const botao = document.createElement('img')
+        const paragrafo = document.querySelector('p')
+        paragrafo.appendChild(botao)
+        botao.addEventListener('click', clicou)
+        botao.addEventListener('mouseenter', entrou)
+        botao.addEventListener('mouseleave', saiu)
+
+        botao.src = 'botao-escuro2.png'
+        document.body.style.transition = '1s'
+        botao.style.transition = 'all .5s ease'
+        botao.style.borderRadius = '50%'
+        botao.style.boxShadow = '1px 1px 8px black'
+        function clicou() {
+            botao.style.transform = 'scale(.9)'
+            
+            setTimeout(() => {
+                botao.style.transform = 'scale(1.0)'
+            }, 250)
+            
+            if (document.body.style.background != 'white') {
+                document.body.style.background = 'white'
+                botao.src = 'botao-claro2.png'
+            } else {
+                document.body.style.background = '#000102'
+                botao.src = 'botao-escuro2.png'
+
+            }
+            
+            
+        }
+
+        function entrou() {
+            
+        }
+
+        function saiu() {
+            // botao.style.transform = 'scale(1.0)'
+        }
+    </script>
+</body>
+</html>

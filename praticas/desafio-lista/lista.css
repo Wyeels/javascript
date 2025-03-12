@@ -6,9 +6,20 @@
     box-sizing: border-box;
 }
 
-main {
-    width: 100vw;
+:root {
+    --cor-fundo: #000102;
+    --cor-botao: #7589A0;
+    --cor-caixas: #2C3844;
+}
+
+body {
     height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+
+main {
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
@@ -39,4 +50,6 @@ footer {
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+    margin-top: 80px;
 }
