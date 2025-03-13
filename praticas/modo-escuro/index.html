@@ -21,9 +21,13 @@
         document.body.style.transition = '1s'
         botao.style.transition = 'all .5s ease'
         botao.style.borderRadius = '50%'
-        botao.style.boxShadow = '1px 1px 8px black'
+        botao.style.boxShadow = '0px 0px 12px #00000062'
+        document.body.style.background = 'white'
+
         function clicou() {
             botao.style.transform = 'scale(.9)'
+            
+            
             
             setTimeout(() => {
                 botao.style.transform = 'scale(1.0)'
@@ -31,13 +35,15 @@
             
             if (document.body.style.background != 'white') {
                 document.body.style.background = 'white'
-                botao.src = 'botao-claro2.png'
+                botao.src = 'botao-escuro2.png'
+                botao.style.boxShadow = '0px 0px 12px #00000062'
             } else {
                 document.body.style.background = '#000102'
-                botao.src = 'botao-escuro2.png'
+                botao.src = 'botao-claro2.png'
+                botao.style.boxShadow = '0px 0px 12px #ffffff62'
 
             }
-            
+            // botao.style.transform = 'rotate(.5turn)'
             
         }
 

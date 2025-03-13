@@ -8,6 +8,7 @@
 
 :root {
     --cor-fundo: #000102;
+    --cor-fundo: #020002;
     --cor-botao: #7589A0;
     --cor-caixas: #2C3844;
 }
@@ -26,6 +27,12 @@ main {
     align-items: center;
 }
 
+main > section {
+    background-color: var(--cor-caixas);
+    padding: 8px;
+    border-radius: 12px;
+}
+
 main > section > h1 {
     padding: 10px;
     margin: 10px;
@@ -34,6 +41,8 @@ main > section > h1 {
 main > section > p > input {
     width: min-content;
     display: inline-block;
+    background-color: var(--cor-caixas);
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 6px;
     margin: 2px;
@@ -43,6 +52,15 @@ main > section > p > input {
 main > section > p > input:hover {
     transform: scale(1.03);
     transition: all .5s ease;
+}
+
+main > section > p > label > button {
+    background-color: var(--cor-botao);
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
+    padding: 4px;
+    margin: 4px;
+    border: none;
+    border-radius: 8px;
 }
 
 footer {
