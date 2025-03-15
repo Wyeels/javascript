@@ -47,6 +47,7 @@ main > section button {
 }
 
 main > section button:hover {
+    cursor: pointer;
     transform: scale(1.08);
     transition: all .5s ease;
 }
