@@ -56,10 +56,11 @@ function completo() {
         eliminar.style.display = 'inline'  
         eliminar.value = escolhido 
         eliminar.innerText = 'Apagar'
-        document.getElementsByClassName(escolhido)[0].appendChild(eliminar)
+        document.getElementsByClassName(escolhido)[0].after(eliminar)
         opcoes.style.textDecoration = 'line-through'
         botesc.innerText = 'Incompleto'
 
+        section.style.width = '350px'
         eliminar.addEventListener('click', apagar)
     }
 }
