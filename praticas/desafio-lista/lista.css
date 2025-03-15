@@ -4,19 +4,21 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    color: rgba(255, 255, 255, 0.6);
 }
 
 :root {
-    --cor-fundo: #020002;
+    --cor-fundo: #212121;
     --cor-botao: #7589A0;
-    --cor-caixas: #2C3844;
+    --cor-caixas: #303030;
 }
 
 body {
     height: 100vh;
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    background-color: var(--cor-fundo);
 }
 
 main {
@@ -27,15 +29,32 @@ main {
 }
 
 main > section {
+    display: flex;
+    flex-flow: column nowrap;
     background-color: var(--cor-caixas);
-    padding: 8px;
+    padding: 20px;
     border-radius: 12px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
 }
 
-main > section > h1 {
-    padding: 10px;
-    margin: 10px;
+main > section button {
+    background-color: transparent;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
+    padding: 4px;
+    margin: 4px;
+    border: none;
+    border-radius: 8px;
 }
+
+main > section button:hover {
+    transform: scale(1.08);
+    transition: all .5s ease;
+}
+
+/* main > section > button {
+    width: 100px;
+    align-self: center;
+} */
 
 main > section > p > input {
     width: min-content;
@@ -53,13 +72,13 @@ main > section > p > input:hover {
     transition: all .5s ease;
 }
 
-main > section > p > label > button {
-    background-color: var(--cor-botao);
-    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
-    padding: 4px;
-    margin: 4px;
-    border: none;
-    border-radius: 8px;
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgba(255, 255, 255);
+    transition: all 1s ease;
 }
 
 footer {
@@ -67,6 +86,7 @@ footer {
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
+    font-size: small;
     padding: 20px;
     margin-top: 80px;
 }
