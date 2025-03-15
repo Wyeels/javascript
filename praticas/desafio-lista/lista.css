@@ -39,7 +39,7 @@ main > section {
 
 main > section button {
     background-color: transparent;
-    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
     padding: 4px;
     margin: 4px;
     border: none;
@@ -60,8 +60,8 @@ main > section > p > input {
     width: min-content;
     display: inline-block;
     background-color: var(--cor-caixas);
-    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 6px;
     margin: 2px;
     padding: 4px;
