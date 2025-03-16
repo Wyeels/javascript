@@ -7,10 +7,21 @@ section.appendChild(novoitem)
 novoitem.addEventListener('click', criar)
 
 function criar() {
+    const aparecer = [
+        { opacity: '0' },
+        { opacity: '100' }
+    ]
+
+    const tempo = {
+        duration: 600,
+        iterations: 1
+    }
+
     const paragrafo = document.createElement('p')
     const caixa = document.createElement('input')
     caixa.setAttribute('class', 'itens')
     paragrafo.appendChild(caixa)
+    paragrafo.animate(aparecer, tempo)
     novoitem.before(paragrafo)
     atualizar()
 }
@@ -66,8 +77,24 @@ function completo() {
 
 function apagar() {
     const escolhido = this.value
+
+    const sumir = [
+        { opacity: 100 },
+        { opacity: 0 }
+    ]
+
+    const tempo = {
+        duration: 600,
+        iterations: 1
+    }
+
+    document.getElementsByClassName(`p${escolhido}`)[0].animate(sumir, tempo)
+
+    setTimeout(() => {
+        document.getElementsByClassName(`p${escolhido}`)[0].style.display = 'none'
+    }, 500);
     
-    document.getElementsByClassName(`p${escolhido}`)[0].style.display = 'none'
+    
     atualizar()
 }
 
