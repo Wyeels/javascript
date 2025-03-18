@@ -41,7 +41,7 @@ main > section {
     background-color: var(--cor-caixas);
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 1px 6px rgba(0, 256, 256, 0.3);
 }
 
 main > section button {
@@ -54,6 +54,7 @@ main > section button {
 }
 
 main > section button:hover {
+    box-shadow: 1px 1px 6px rgba(0, 256, 256, 0.3);
     cursor: pointer;
     transform: scale(1.08);
     transition: all .5s ease;
@@ -76,6 +77,7 @@ main > section > p > input {
 }
 
 main > section > p > input:hover {
+    box-shadow: 0px 0px 6px rgba(0, 256, 256, 0.2);
     transform: scale(1.03);
     transition: all .5s ease;
 }
