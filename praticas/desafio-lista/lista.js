@@ -1,5 +1,8 @@
 const section = document.querySelector('section#guardaritem')
 section.style.height = 'min-content'
+const menu = document.getElementsByTagName('span')[0]
+menu.addEventListener('click', abrir)
+const tela = document.getElementsByTagName('div')[0]
 
 const novoitem = document.createElement('button')
 novoitem.innerText = 'Criar'
@@ -98,4 +101,37 @@ function apagar() {
     atualizar()
 }
 
+function abrir() {
+    const animacaoentrar = [
+        { opacity: 0 },
+        { opacity: 100 }
+    ]
+    const animacaosair = [
+        { opacity: 100 },
+        { opacity: 0 }
+    ]
 
+    const tempo = {
+        duration: 800,
+        iterations: 1
+    }
+
+    
+
+    if (tela.style.display == 'block') {
+        tela.animate(animacaosair, tempo)
+        setTimeout(() => {
+            tela.style.display = 'none'
+        }, 800);
+    } else {
+        tela.animate(animacaoentrar, tempo)
+        tela.style.display = 'block'
+    }
+
+    menu.style.transform = 'scale(0.8)'
+    setTimeout(() => {
+        menu.style.transform = 'scale(1.0)'
+    }, 500);
+    menu.style.transition = 'all 1s ease'
+    menu.after(tela)
+}
