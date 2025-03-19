@@ -38,19 +38,19 @@ function atualizar() {
     const paragrafo = document.querySelectorAll('p')
 
     for (let contador in item) {
-        paragrafo[contador].setAttribute('class', `p${contador}`)
-        const label = document.createElement('label')
-        label.setAttribute('class', contador)
-        const botao = document.createElement('button')
-        item[contador].setAttribute('id', contador)
-        item[contador].after(label)
-        label.appendChild(botao)
-        botao.innerText = 'Completo'
-        botao.style.display = 'inline'
-        botao.addEventListener('click', completo)
-        botao.value = contador
-        if (document.getElementsByClassName(contador)[1]) {
-            document.getElementsByClassName(contador)[0].remove()
+        
+        if (item[contador].nextElementSibling == null) {
+            paragrafo[contador].setAttribute('class', `p${contador}`)
+            const label = document.createElement('label')
+            label.setAttribute('class', contador)
+            const botao = document.createElement('button')
+            item[contador].setAttribute('id', contador)
+            item[contador].after(label)
+            label.appendChild(botao)
+            botao.innerText = 'Completo'
+            botao.style.display = 'inline'
+            botao.addEventListener('click', completo)
+            botao.value = contador
         }
     }
 }
