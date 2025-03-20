@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/pc.css" media="screen and (min-width: 768px)">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@1" rel="stylesheet"/>
+</head>
+<body>
+    <main>
+        <section id="iimg">
+            <!-- Imagem de Fundo -->
+        </section>
+        <section>
+            <h1>Bem vindo!</h1>
+            <p>Você pode acessar sua conta logo abaixo e continuar suas atividades normalmente!</p>
+            <form id="log" method="get" autocomplete="on">
+                <div>
+                    <label for="iusu">
+                        <span class="material-symbols-outlined">email</span>
+                    </label>
+                    <input type="email" name="usu" id="iusu" required maxlength="30" minlength="10" placeholder="exemplo123@gmail.com" pattern="^([a-zA-Z0-9]+)@([a-zA-Z]+)(\.[a-zA-Z]{2,})$" autocomplete="email">
+                </div>
+                <div>
+                    <label for="isen">
+                        <span class="material-symbols-outlined">vpn_key</span>
+                    </label>
+                    <input type="password" name="sen" id="isen" minlength="8" maxlength="18" required placeholder="Exemplo123!" pattern="^([A-Z]{1})([a-zA-Z0-9]+)([^a-zA-Z0-9])$" autocomplete="current-password">
+                </div>
+                <div>
+                    <a href="../index.html"><input type="submit" value="Login"></a>
+                </div>
+            </form>
+            <p>
+                Não tem uma conta? <a href="cadastro.html">Crie agora mesmo!</a>
+            </p>
+        </section>
+    </main>
+    <footer>
+        <p>Criado por <a href="https://github.com/wyeels">Wesley Xavier</a></p>
+    </footer>
+
+    <script>
+        function recuperarLogin() {
+            const usuario = localStorage.getItem('usuario');
+            const senha = localStorage.getItem('senha');
+            
+            return { usuario, senha };
+        }
+
+        const log = document.getElementById('log');
+        log.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const loginData = recuperarLogin();
+
+            const usuarioInput = document.getElementById('iusu').value;
+            const senhaInput = document.getElementById('isen').value;
+
+            if (loginData && loginData.usuario === usuarioInput && loginData.senha === senhaInput) {
+                window.location.href = '../index.html';
+            } else {
+                alert('Usuário ou senha inválidos. Tente novamente.');
+            }
+        });
+    </script>
+</body>
+</html>
