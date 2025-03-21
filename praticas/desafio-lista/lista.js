@@ -10,6 +10,18 @@ novoitem.innerText = 'Criar'
 section.appendChild(novoitem)
 novoitem.addEventListener('click', criar)
 
+function verificarLogin() {
+    const usuario = localStorage.getItem('usuario');  
+
+    if (usuario) {
+        span.style.display = 'none'
+    } else {
+        span.style.display = 'block'
+    }
+}
+
+verificarLogin()
+
 function criar() {
     const aparecer = [
         { opacity: '0' },
@@ -23,6 +35,7 @@ function criar() {
 
     const paragrafo = document.createElement('p')
     const caixa = document.createElement('input')
+    caixa.setAttribute('placeholder', 'Digite sua tarefa aqui...')
     caixa.setAttribute('class', 'itens')
     paragrafo.appendChild(caixa)
     paragrafo.animate(aparecer, tempo)

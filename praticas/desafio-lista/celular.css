@@ -37,12 +37,18 @@ header > section {
 }
 
 header > section > div {
-    width: 200px;
-    height: 400px;
+    width: 150px;
+    height: 195px;
     position: absolute;
+    padding: 10px;
     display: none;
-    background-color: blue;
+    background-color: #303030af;
     border-radius: 8px;
+}
+
+header > section > div > a {
+    display: block;
+    margin-bottom: 20px;
 }
 
 header > section#sec2 {
