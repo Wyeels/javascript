@@ -104,13 +104,7 @@ main > section > form > div > input[type = email]:focus, main > section > form >
     color: var(--cor-texto);
 }
 
-main > section > form > div > a {
-    width: 100%;
-    display: flex;
-    text-decoration: none;
-}
-
-main > section > form > div > a > input[type = submit] {
+main > section > form > div > input[type = submit] {
     flex: 1 1 200px;
     height: 35px;
     margin: 8px;
@@ -120,7 +114,7 @@ main > section > form > div > a > input[type = submit] {
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
-main > section > form > div > a > input[type = submit]:hover {
+main > section > form > div > input[type = submit]:hover {
     background-color: var(--cor-botao);
     color: var(--cor-texto);
     box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8);

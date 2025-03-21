@@ -1,4 +1,5 @@
 const section = document.querySelector('section#guardaritem')
+const span = document.querySelector('section > a > span')
 section.style.height = 'min-content'
 const menu = document.getElementsByTagName('span')[0]
 menu.addEventListener('click', abrir)

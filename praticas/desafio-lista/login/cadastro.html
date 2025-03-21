@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="estilos/style.css">
     <link rel="stylesheet" href="estilos/pc-cadas.css" media="screen and (min-width: 768px)">
@@ -31,9 +32,7 @@
                     <input type="password" name="sen" id="isen" required autocomplete="new-password" minlength="8" maxlength="18" placeholder="Exemplo123!" pattern="^([A-Z]{1})([a-zA-Z0-9]+)([^a-zA-Z0-9])$">
                 </div>
                 <div>
-                    <a href="index.html">
-                        <input type="submit" value="Criar">
-                    </a>
+                    <input type="submit" value="Criar">
                 </div>
             </form>
             <p>Já tem uma conta? <a href="index.html">Acesse agora mesmo!</a></p>
@@ -44,10 +43,13 @@
     </footer>
 
     <script> 
-function salvarLogin(usuario, senha) {
-            localStorage.setItem('usuario', usuario);
-            localStorage.setItem('senha', senha);
-        }
+    function salvarLogin(usuario, senha) {
+        const senhaCriptografada = CryptoJS.AES.encrypt(senha, 'senhaLog').toString()
+        const usuarioCriptografado = CryptoJS.AES.encrypt(usuario, 'usuarioLog').toString()
+        localStorage.setItem('senha', senhaCriptografada)
+        localStorage.setItem('usuario', usuarioCriptografado)
+        
+}
 
         const cadas = document.getElementById('cadas');
         cadas.addEventListener('submit', function(event) {
@@ -59,7 +61,7 @@ function salvarLogin(usuario, senha) {
             salvarLogin(usuario, senha);
             
             alert('Cadastro realizado com sucesso!');
-            
+
             window.location.href = 'index.html';
         });
     </script>
