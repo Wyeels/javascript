@@ -46,20 +46,20 @@
 
     <script>
         function recuperarLogin() {
-            const usuarioCriptografado = localStorage.getItem('usuario');
-            const senhaCriptografada = localStorage.getItem('senha');
+            const usuarioCriptografado = localStorage.getItem('usuario')
+            const senhaCriptografada = localStorage.getItem('senha')
             
-            return { usuarioCriptografado, senhaCriptografada };
+            return { usuarioCriptografado, senhaCriptografada }
         }
 
-        const log = document.getElementById('log');
+        const log = document.getElementById('log')
         log.addEventListener('submit', function(event) {
-            event.preventDefault();
+            event.preventDefault()
 
-            const loginData = recuperarLogin();
+            const loginData = recuperarLogin()
 
-            const usuarioInput = document.getElementById('iusu').value;
-            const senhaInput = document.getElementById('isen').value;
+            const usuarioInput = document.getElementById('iusu').value
+            const senhaInput = document.getElementById('isen').value
 
             const desBySen = CryptoJS.AES.decrypt(loginData.senhaCriptografada, 'senhaLog')
             const desByUsu = CryptoJS.AES.decrypt(loginData.usuarioCriptografado, 'usuarioLog')
@@ -68,11 +68,11 @@
             const usuarioDescriptografado = desByUsu.toString(CryptoJS.enc.Utf8)
 
             if (loginData && usuarioDescriptografado === usuarioInput && senhaDescriptografada === senhaInput) {
-                window.location.href = '../index.html';
+                window.location.href = '../index.html'
             } else {
-                alert('Usuário ou senha inválidos. Tente novamente.');
+                alert('Usuário ou senha inválidos. Tente novamente.')
             }
-        });
+        })
     </script>
 </body>
 </html>
