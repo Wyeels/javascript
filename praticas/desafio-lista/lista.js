@@ -10,6 +10,15 @@ novoitem.innerText = 'Criar'
 section.appendChild(novoitem)
 novoitem.addEventListener('click', criar)
 
+function verificarTamanho() {
+    const div = document.querySelector('div')
+    if (window.innerWidth >= 800) {
+        div.style.display = 'block'
+    } else {
+        div.style.display = 'none'
+    }
+}
+
 function verificarLogin() {
     const usuario = localStorage.getItem('usuario');  
 
@@ -43,8 +52,6 @@ function criar() {
     atualizar()
 }
 
-
-
 atualizar()
 
 function atualizar() {
@@ -52,7 +59,7 @@ function atualizar() {
     const paragrafo = document.querySelectorAll('p')
 
     for (let contador in item) {
-        
+
         if (item[contador].nextElementSibling == null) {
             paragrafo[contador].setAttribute('class', `p${contador}`)
             const label = document.createElement('label')
