@@ -131,9 +131,10 @@ function apagar() {
 
     setTimeout(() => {
         document.getElementsByClassName(`p${escolhido}`)[0].style.display = 'none'
+        verificarLogin()
     }, 500);
     
-    verificarLogin()
+    
     atualizar()
 }
 
