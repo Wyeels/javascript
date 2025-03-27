@@ -22,20 +22,15 @@ function verificarTamanho() {
 
 
 function verificarLogin() {
-    const completas = document.querySelectorAll('p')
+    const opccompletas = document.querySelectorAll('input[type = text].itens')
     let quantcompletas = 0
     
-
-    
-    
-    for (let contador in completas) {
-    if (completas.hasOwnProperty(contador)) {
-        if (window.getComputedStyle(completas[contador]).display === 'none') {
-            quantcompletas++
-            }
+    Array.from(opccompletas).forEach(el => {
+        if (window.getComputedStyle(el).textDecoration.includes('line-through')) {
+            quantcompletas++;
         }
-    }
-
+    });
+    
     const usuario = localStorage.getItem('usuario')
 
     if (usuario) {
@@ -99,7 +94,7 @@ function completo() {
         opcoes.style.textDecoration = 'none'
         botesc.innerText = 'Completo'
         document.getElementById(`b${escolhido}`).remove()
-
+        verificarLogin()
     } else {
         const eliminar = document.createElement('button')
         eliminar.setAttribute('id', `b${escolhido}`)
@@ -109,6 +104,7 @@ function completo() {
         document.getElementsByClassName(escolhido)[0].after(eliminar)
         opcoes.style.textDecoration = 'line-through'
         botesc.innerText = 'Incompleto'
+        verificarLogin()
         
         eliminar.addEventListener('click', apagar)
     }
@@ -131,7 +127,6 @@ function apagar() {
 
     setTimeout(() => {
         document.getElementsByClassName(`p${escolhido}`)[0].style.display = 'none'
-        verificarLogin()
     }, 500);
     
     
