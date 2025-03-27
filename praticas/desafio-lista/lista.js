@@ -19,15 +19,30 @@ function verificarTamanho() {
     }
 }
 
+
+
 function verificarLogin() {
-    const usuario = localStorage.getItem('usuario');  
+    const completas = document.querySelectorAll('p')
+    let quantcompletas = 0
+    
+
+    
+    
+    for (let contador in completas) {
+    if (completas.hasOwnProperty(contador)) {
+        if (window.getComputedStyle(completas[contador]).display === 'none') {
+            quantcompletas++
+            }
+        }
+    }
+
+    const usuario = localStorage.getItem('usuario')
 
     if (usuario) {
-        span.style.display = 'none'
-    } else {
-        span.style.display = 'block'
+        span.innerHTML = quantcompletas
     }
 }
+
 
 verificarLogin()
 
@@ -84,7 +99,7 @@ function completo() {
         opcoes.style.textDecoration = 'none'
         botesc.innerText = 'Completo'
         document.getElementById(`b${escolhido}`).remove()
-        
+
     } else {
         const eliminar = document.createElement('button')
         eliminar.setAttribute('id', `b${escolhido}`)
@@ -118,7 +133,7 @@ function apagar() {
         document.getElementsByClassName(`p${escolhido}`)[0].style.display = 'none'
     }, 500);
     
-    
+    verificarLogin()
     atualizar()
 }
 
