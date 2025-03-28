@@ -22,15 +22,19 @@ function verificarTamanho() {
 
 
 function verificarLogin() {
-    const opccompletas = document.querySelectorAll('input[type = text].itens')
+    const opccompletas = document.querySelectorAll('input.itens')
     let quantcompletas = 0
     
-    Array.from(opccompletas).forEach(el => {
-        if (window.getComputedStyle(el).textDecoration.includes('line-through')) {
-            quantcompletas++;
+    Array.from(opccompletas).forEach(oc => {
+        if (window.getComputedStyle(oc).textDecoration.includes('line-through')) {
+            quantcompletas++
         }
     });
     
+    if (quantcompletas >= 10) {
+        
+    }
+
     const usuario = localStorage.getItem('usuario')
 
     if (usuario) {
