@@ -34,6 +34,8 @@ function verificarLogin() {
     if (quantcompletas >= 10) {
         span.style.backgroundImage = 'linear-gradient(to left, red, blue)'
         span.style.backgroundClip = 'text'
+    } else {
+        span.style.backgroundImage = 'none'
     }
 
     const usuario = localStorage.getItem('usuario')
